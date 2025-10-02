@@ -1,0 +1,7 @@
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\抽号器.pdb
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\D3DCompiler_47_cor3.dll
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\PenImc_cor3.dll
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\PresentationNative_cor3.dll
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\vcruntime140_cor3.dll
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\wpfgfx_cor3.dll
+D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\抽号器.exe
