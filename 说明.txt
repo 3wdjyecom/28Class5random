@@ -1,0 +1,1 @@
+自行输入转换为SHA256哈希值密码，文件名XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=,和exe文件放在同一目录下
