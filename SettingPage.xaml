@@ -1,0 +1,22 @@
+<Page x:Class=  "抽号器.SettingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      
+      Title="">
+    <Grid Background="White" Height="450" Width="800" RenderTransformOrigin="-0.062,0.433">
+
+        <TextBlock Text="28届5班专用抽号器-设置" 
+                      FontSize="20" 
+                      FontWeight="Bold" 
+                      Margin="271,10,300,414" 
+                      />
+        <TextBox x:Name="aviodfigure" HorizontalAlignment="Left" Height="25" Margin="220,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="280" TextChanged="Avoidfigure_TextChanged"/>
+        <Label Content="避开数字：" HorizontalAlignment="Left" Height="25" Margin="150,80,0,0" VerticalAlignment="Top" Width="70"/>
+        <CheckBox Content="重复抽取" HorizontalAlignment="Left" Height="20" Margin="150,275,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="killex" Content="结束explorer来降低占用" HorizontalAlignment="Left" Height="30" Margin="150,320,0,0" VerticalAlignment="Top" Width="150" Click="Killexplorer_Click"/>
+        <Button Content="重启explorer" HorizontalAlignment="Left" Height="30" Margin="150,355,0,0" VerticalAlignment="Top" Width="150" Click="returnexplorer_Click"/>
+        <Button Content="确定" HorizontalAlignment="Left" Height="25" Margin="500,80,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
+        <Button x:Name="back1" Content="⬅返回" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="70" BorderThickness="0" Background="Transparent" Click="back_Click"/>
+
+    </Grid>
+</Page>
