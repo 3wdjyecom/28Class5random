@@ -1,19 +1,15 @@
-using System;
-using System;
-using System.Configuration;
 using System.Diagnostics;
-using System.Linq;
-using System.Text.Json;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using static System.Net.Mime.MediaTypeNames;
 
 
-namespace æŠ½å·å™¨
+namespace ³éºÅÆ÷
 {
     public partial class SettingPage : Page
     {
+
         public SettingPage()
         {
             InitializeComponent();
@@ -25,21 +21,21 @@ namespace æŠ½å·å™¨
             Regex regex = new Regex(@"^[\d;]$");
             if (!regex.IsMatch(aviodfigure.Text))
             {
-                e.Handled = true; // é˜»æ­¢è¾“å…¥
+                e.Handled = true; // ×èÖ¹ÊäÈë
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(avoid))
             {
-                MessageBox.Show("è¯·è¾“å…¥è¦é¿å¼€çš„æ•°å­—", "28å±Š5ç­ä¸“ç”¨æŠ½å·å™¨", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ÇëÊäÈëÒª±Ü¿ªµÄÊı×Ö", "28½ì5°à×¨ÓÃ³éºÅÆ÷", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             string[] avoider = avoid.Split(';');
             int[] allavNumbers = avoider.Select(int.Parse).ToArray();
             foreach (int num in allavNumbers)
             {
-                
+
             }
         }
 
@@ -49,9 +45,9 @@ namespace æŠ½å·å™¨
         {
             try
             {
-                
 
-                // ä½¿ç”¨ taskkill å¼ºåˆ¶ç»“æŸå¹¶é˜²æ­¢é‡å¯
+
+                // Ê¹ÓÃ taskkill Ç¿ÖÆ½áÊø²¢·ÀÖ¹ÖØÆô
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = "taskkill",
@@ -62,11 +58,11 @@ namespace æŠ½å·å™¨
 
                 Process.Start(startInfo);
 
-               
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"æ“ä½œå¤±è´¥: {ex.Message}");
+                MessageBox.Show($"²Ù×÷Ê§°Ü: {ex.Message}");
             }
         }
 
@@ -75,16 +71,16 @@ namespace æŠ½å·å™¨
             try
             {
                 Process.Start("explorer.exe");
-                
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"âŒ å¯åŠ¨èµ„æºç®¡ç†å™¨å¤±è´¥: {ex.Message}", "é”™è¯¯", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"? Æô¶¯×ÊÔ´¹ÜÀíÆ÷Ê§°Ü: {ex.Message}", "´íÎó", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            // ä¿®æ”¹è¿™é‡Œï¼šè°ƒç”¨ä¸»çª—å£çš„å¯¼èˆªæ–¹æ³•
+            // ĞŞ¸ÄÕâÀï£ºµ÷ÓÃÖ÷´°¿ÚµÄµ¼º½·½·¨
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
@@ -92,9 +88,60 @@ namespace æŠ½å·å™¨
             }
         }
 
+        private void cmbOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void selhd_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmbOptions.SelectedItem != null)
+            {
+                ComboBoxItem selectedItem = (ComboBoxItem)cmbOptions.SelectedItem;
+                string displayText = selectedItem.Content.ToString();  // ÏÔÊ¾ÎÄ±¾£º"Ñ¡Ïî1"
+                string value = selectedItem.Tag?.ToString();
+
+                if (value == "True")  // ĞŞÕı£ºÊ¹ÓÃ == ¶ø²»ÊÇ =£¬²¢Ìí¼ÓÒıºÅ
+                {
+                    try
+                    {
+                        string appDir = AppDomain.CurrentDomain.BaseDirectory;
+                        string filePath = Path.Combine(appDir, "set1.hcy");
+                        string[] lines = { "True" };
+
+                        File.WriteAllLines(filePath, lines);
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                    }
+                }
+                else  // Ìí¼Ó else ·ÖÖ§
+                {
+                    try
+                    {
+                        string appDir = AppDomain.CurrentDomain.BaseDirectory;
+                        string filePath = Path.Combine(appDir, "set1.hcy");
+                        string[] lines = { "False" };
+                        File.WriteAllLines(filePath, lines);
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ğ´ÈëÎÄ¼şÊ±³ö´í: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+        private void About_Click_1(object sender, RoutedEventArgs e)
+        {
+            AboutFrame.Visibility = Visibility.Visible;
+            AboutFrame.Navigate(new AboutPage());
+        }
     }
 
 
-        
-    }
+
+}
 

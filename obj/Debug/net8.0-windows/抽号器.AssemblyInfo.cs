@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("抽号器")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e16040ef49febde279a782969eef206f83a5c73")]
 [assembly: System.Reflection.AssemblyProductAttribute("抽号器")]
 [assembly: System.Reflection.AssemblyTitleAttribute("抽号器")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

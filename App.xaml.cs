@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace 抽号器
+namespace 抽号器2
 {
     /// <summary>
     /// Interaction logic for App.xaml

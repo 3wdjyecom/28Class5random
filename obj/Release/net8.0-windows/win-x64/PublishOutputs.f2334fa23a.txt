@@ -1,0 +1,2 @@
+D:\project\抽号器\抽号器2\bin\Release\net8.0-windows\抽号器2.pdb
+D:\project\抽号器\抽号器2\bin\Release\net8.0-windows\抽号器2.exe

@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shapes;
 using System;
+using System.Diagnostics.Eventing.Reader;
 
 
 namespace 抽号器
@@ -19,6 +20,10 @@ namespace 抽号器
             InitializeDefaultValues();
 
         }
+
+
+
+
         private void RealTimeTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string currentTexta = minNUM.Text;
@@ -41,7 +46,7 @@ namespace 抽号器
         {
             if (!int.TryParse(minNUM.Text, out int minNum) || !int.TryParse(maxNUM.Text, out int maxNum))
             {
-               
+
                 MessageBox.Show("取值范围不能为空集", "28届5班专用抽号器", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }//检测是否为数字
@@ -61,12 +66,24 @@ namespace 抽号器
                 MessageBox.Show("取值范围出现错误！", "28届5班专用抽号器", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }//检测取值范围是否正确
-            string appDir = AppDomain.CurrentDomain.BaseDirectory;
-            string filePath = System.IO.Path.Combine(appDir, "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=.pwyy");
-            string correctPassword = File.ReadAllText(filePath, System.Text.Encoding.UTF8).Trim();
+
             int num = new Random().Next(iN, aN + 1);
             output.Text = num.ToString();
             //生成随机数并输出
+            string appDir = AppDomain.CurrentDomain.BaseDirectory;
+            string filePath = System.IO.Path.Combine(appDir, "set1.hcy");
+            string set1 = File.ReadAllText(filePath, System.Text.Encoding.UTF8).Trim();
+            if (set1 == "True")
+            {
+
+            }
+            else
+            {
+                
+            }
+            ;
+
+
         }
 
 

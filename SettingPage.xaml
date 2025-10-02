@@ -1,6 +1,8 @@
-<Page x:Class=  "抽号器.SettingPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      
+      xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class=  "抽号器.SettingPage"
       
       Title="">
     <Grid Background="White" Height="450" Width="800" RenderTransformOrigin="-0.062,0.433">
@@ -12,11 +14,17 @@
                       />
         <TextBox x:Name="aviodfigure" HorizontalAlignment="Left" Height="25" Margin="220,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="280" TextChanged="Avoidfigure_TextChanged"/>
         <Label Content="避开数字：" HorizontalAlignment="Left" Height="25" Margin="150,80,0,0" VerticalAlignment="Top" Width="70"/>
-        <CheckBox Content="重复抽取" HorizontalAlignment="Left" Height="20" Margin="150,275,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button x:Name="killex" Content="结束explorer来降低占用" HorizontalAlignment="Left" Height="30" Margin="150,320,0,0" VerticalAlignment="Top" Width="150" Click="Killexplorer_Click"/>
-        <Button Content="重启explorer" HorizontalAlignment="Left" Height="30" Margin="150,355,0,0" VerticalAlignment="Top" Width="150" Click="returnexplorer_Click"/>
+        <Button x:Name="killex" Content="结束explorer来降低占用" HorizontalAlignment="Left" Height="30" Margin="156,225,0,0" VerticalAlignment="Top" Width="150" Click="Killexplorer_Click"/>
+        <Button Content="重启explorer" HorizontalAlignment="Left" Height="30" Margin="310,225,0,0" VerticalAlignment="Top" Width="150" Click="returnexplorer_Click"/>
         <Button Content="确定" HorizontalAlignment="Left" Height="25" Margin="500,80,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
         <Button x:Name="back1" Content="⬅返回" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="70" BorderThickness="0" Background="Transparent" Click="back_Click"/>
-
+        <ComboBox Name="cmbOptions" Height="30" Margin="240,120,515,300" SelectionChanged="cmbOptions_SelectionChanged" RenderTransformOrigin="0.556,0.5">
+            <ComboBoxItem Content="是" Tag="True" IsSelected ="True" />
+            <ComboBoxItem Content="否" Tag="False" />
+        </ComboBox>
+        <Button x:Name="selhd" Content="确定" HorizontalAlignment="Left" Height="30" Margin="500,120,0,0" VerticalAlignment="Top" Width="90" Click="selhd_Click"/>
+        <Label Content="是否重复抽取：" HorizontalAlignment="Left" Height="30" Margin="150,120,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button Content="关于软件" HorizontalAlignment="Left" Height="30" Margin="156,260,0,0" VerticalAlignment="Top" Width="150" Click="About_Click_1"/>
+        <Frame x:Name="AboutFrame" Visibility="Collapsed" NavigationUIVisibility="Hidden" Grid.RowSpan="10"/>
     </Grid>
 </Page>

@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:抽号器"
         mc:Ignorable="d"
         Title="28届5班专用抽号器" Height="450" Width="800"
         ResizeMode="CanMinimize">
@@ -23,7 +22,8 @@
         <Button Content="github开源" HorizontalAlignment="Left" Height="50" Margin="525,285,0,0" VerticalAlignment="Top" Width="70" Click="Githubopen_Click"/>
         <StackPanel x:Name="MainContent" HorizontalAlignment="Center" VerticalAlignment="Center"></StackPanel>
         <Frame x:Name="MainFrame" Visibility="Collapsed" NavigationUIVisibility="Hidden" Grid.RowSpan="10"/>
-        
+        <Label Content="©版权所有 28届5班" HorizontalAlignment="Left" Height="25" Margin="665,360,0,0" VerticalAlignment="Top" Width="125"/>
+
 
     </Grid>
 </Window>

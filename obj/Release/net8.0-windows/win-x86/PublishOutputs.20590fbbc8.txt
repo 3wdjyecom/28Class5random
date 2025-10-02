@@ -1,2 +1,0 @@
-D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\抽号器.pdb
-D:\project\抽号器\抽号器\bin\Debug\net8.0-windows\抽号器.exe
